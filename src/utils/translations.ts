@@ -149,7 +149,7 @@ const translations: Translations = {
 
   // Post Detail Page
   backToNews: {
-    en: '← Back to News',
+    en: 'Back to News',
     ar: '← العودة للأخبار'
   },
   backToHome: {
@@ -157,16 +157,16 @@ const translations: Translations = {
     ar: 'العودة للرئيسية'
   },
   relatedStories: {
-    en: 'Related Stories',
-    ar: 'قصص ذات صلة'
+    en: 'Related Articles',
+    ar: 'مقالات ذات صلة'
   },
   moreFromAuthor: {
     en: 'More from this author',
     ar: 'المزيد من هذا الكاتب'
   },
   shareThisStory: {
-    en: 'Share this story',
-    ar: 'شارك هذه القصة'
+    en: 'Share this Article',
+    ar: 'شارك هذه المقالة'
   },
   shareTwitter: {
     en: 'Share on Twitter',

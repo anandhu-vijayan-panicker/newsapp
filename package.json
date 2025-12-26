@@ -1,6 +1,7 @@
 {
   "name": "newspulse",
   "version": "0.1.0",
+  "homepage": "https://anandhu-vijayan-panicker.github.io/newsapp",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
