@@ -1,0 +1,395 @@
+.news-banner {
+  position: relative;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.banner-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.banner-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.banner-slide.prev {
+  transform: translateX(-100%);
+}
+
+.banner-slide.next {
+  transform: translateX(100%);
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 60px;
+  max-width: 700px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-tag {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.banner-title {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.banner-title a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.banner-title a:hover {
+  color: var(--secondary);
+}
+
+.banner-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.banner-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.banner-read-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.banner-read-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.banner-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.banner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.banner-dot:hover {
+  background: rgba(255,255,255,0.8);
+  transform: scale(1.2);
+}
+
+.banner-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.banner-arrow:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-arrow.prev {
+  left: 30px;
+}
+
+.banner-arrow.next {
+  right: 30px;
+}
+
+.banner-skeleton {
+  height: 100%;
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-skeleton-image {
+  height: 100%;
+  background: linear-gradient(90deg, var(--border) 25%, #f0f0f0 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.banner-skeleton-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.banner-skeleton-title {
+  height: 48px;
+  width: 60%;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: shimmer 1.5s infinite;
+}
+
+.banner-skeleton-desc {
+  height: 24px;
+  width: 80%;
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite;
+}
+
+.banner-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  color: var(--text);
+  text-align: center;
+  padding: 40px;
+}
+
+.banner-placeholder h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.banner-placeholder p {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (max-width: 1024px) {
+  .news-banner {
+    height: 400px;
+  }
+  
+  .banner-content {
+    padding: 40px;
+    max-width: 500px;
+  }
+  
+  .banner-title {
+    font-size: 36px;
+  }
+  
+  .banner-description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-banner {
+    height: 350px;
+    margin-bottom: 40px;
+  }
+  
+  .banner-content {
+    padding: 30px;
+  }
+  
+  .banner-title {
+    font-size: 28px;
+  }
+  
+  .banner-description {
+    font-size: 14px;
+    display: none;
+  }
+  
+  .banner-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .banner-arrow.prev {
+    left: 15px;
+  }
+  
+  .banner-arrow.next {
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-banner {
+    height: 300px;
+  }
+  
+  .banner-content {
+    padding: 20px;
+  }
+  
+  .banner-title {
+    font-size: 22px;
+  }
+  
+  .banner-meta {
+    font-size: 12px;
+    gap: 12px;
+  }
+  
+  .banner-read-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.banner-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  color: var(--text);
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.placeholder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.banner-placeholder h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.banner-placeholder p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 600px;
+}

@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { store } from './store/store';
+import { ThemeController } from './controllers/ThemeController';
+import { LanguageController } from './controllers/LanguageController';
+import HomePage from './views/pages/HomePage';
+import PostDetailPage from 'views/pages/PostDetailPage';
+import './styles/theme.css';
+import './styles/layout.css';
+import './styles/navbar.css';
+import './styles/news.css';
+import './styles/skeleton.css';
+import './styles/detail.css';
+import './styles/banner.css';
 
-function App() {
+
+const App: React.FC = () => {
+  useEffect(() => {
+    ThemeController.init();
+    LanguageController.init();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/news/:id" element={<PostDetailPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
