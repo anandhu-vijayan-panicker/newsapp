@@ -18,6 +18,11 @@
 - Social Sharing - Share to all platforms
 - MVC Architecture - i used Model-View-Controller Architecture design
 
+
+
+all the package i used is in the package.json
+if any issue while running please connect with me on " anandhuvpanicker@gmail.com"
+
 ## Project Structure (MVC)
 SRC
 |   App.css
